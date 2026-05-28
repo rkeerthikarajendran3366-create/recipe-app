@@ -9,9 +9,18 @@ const RecipeDetails = () => {
 
   const [meal, setMeal] = useState(null);
 
-  useEffect(() => {
-    fetchMealDetails();
-  }, []);
+ useEffect(() => {
+
+  const fetchData = async () => {
+
+    const data = await getMealDetails(id);
+
+    setMeal(data);
+  };
+
+  fetchData();
+
+}, [id]);
 
   const fetchMealDetails = async () => {
     const data = await getMealDetails(id);
