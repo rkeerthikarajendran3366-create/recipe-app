@@ -22,11 +22,7 @@ const RecipeDetails = () => {
 
 }, [id]);
 
-  const fetchMealDetails = async () => {
-    const data = await getMealDetails(id);
 
-    setMeal(data);
-  };
 
   if (!meal) {
     return <h1>Loading...</h1>;
