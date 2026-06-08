@@ -1,3 +1,4 @@
+import Favorites from "./pages/Favorites";
 import {
   BrowserRouter,
   Routes,
@@ -26,6 +27,10 @@ function App() {
         <Route
           path="/recipe/:id"
           element={<RecipeDetails />}
+        />
+        <Route
+          path="/favorites"
+          element={<Favorites />}
         />
 
       </Routes>
