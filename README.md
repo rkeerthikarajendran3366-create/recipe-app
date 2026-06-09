@@ -68,3 +68,58 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Recipe App 🍴
+
+A React-based Recipe Application that allows users to browse, search, filter, and save recipes using TheMealDB API.
+
+## Features
+
+- Browse recipes
+- Search recipes by name
+- Filter recipes by category
+- View recipe details
+- Watch recipe videos on YouTube
+- Add recipes to favorites
+- Remove recipes from favorites
+- Favorite counter in Navbar
+- Responsive UI with Tailwind CSS
+
+## Tech Stack
+
+- React JS
+- React Router DOM
+- Tailwind CSS
+- Axios
+- TheMealDB API
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/rkeerthikarajendran3366-create/recipe-app.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run the project
+
+```bash
+npm start
+```
+
+## API Used
+
+https://www.themealdb.com/api.php
+
+## Deployment
+
+Netlify
+
+## Author
+
+Keerthi R
