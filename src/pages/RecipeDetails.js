@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getMealDetails } from "../services/api";
+import { toast } from "react-toastify";
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -12,27 +13,27 @@ const RecipeDetails = () => {
     const favorites =
       JSON.parse(localStorage.getItem("favorites")) || [];
 
-    const exists = favorites.find(
+    const exists = favorites.some(
       (item) => item.idMeal === meal.idMeal
     );
 
-    if (!exists) {
-      favorites.push(meal);
-
-      localStorage.setItem(
-  "favorites",
-  JSON.stringify(favorites)
-);
-
-window.dispatchEvent(
-  new Event("favoritesUpdated")
-);
-      window.dispatchEvent(new Event("storage"));
-
-      alert("Added to Favorites ❤️");
-    } else {
-      alert("Already in Favorites ❤️");
+    if (exists) {
+      toast.info("Recipe already in favorites ❤️");
+      return;
     }
+
+    favorites.push(meal);
+
+    localStorage.setItem(
+      "favorites",
+      JSON.stringify(favorites)
+    );
+
+    window.dispatchEvent(
+      new Event("favoritesUpdated")
+    );
+
+    toast.success("Added to Favorites ❤️");
   };
 
   useEffect(() => {
