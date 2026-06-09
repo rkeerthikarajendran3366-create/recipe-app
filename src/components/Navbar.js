@@ -14,11 +14,9 @@ const Navbar = () => {
 
     updateCount();
 
-    window.addEventListener("storage", updateCount);
+    const interval = setInterval(updateCount, 1000);
 
-    return () => {
-      window.removeEventListener("storage", updateCount);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (

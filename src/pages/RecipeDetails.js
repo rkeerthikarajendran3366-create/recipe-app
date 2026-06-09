@@ -20,9 +20,13 @@ const RecipeDetails = () => {
       favorites.push(meal);
 
       localStorage.setItem(
-        "favorites",
-        JSON.stringify(favorites)
-      );
+  "favorites",
+  JSON.stringify(favorites)
+);
+
+window.dispatchEvent(
+  new Event("favoritesUpdated")
+);
       window.dispatchEvent(new Event("storage"));
 
       alert("Added to Favorites ❤️");

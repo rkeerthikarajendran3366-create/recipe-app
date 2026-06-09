@@ -14,9 +14,13 @@ const Favorites = () => {
         setFavorites(updatedFavorites);
 
         localStorage.setItem(
-            "favorites",
-            JSON.stringify(updatedFavorites)
-        );
+  "favorites",
+  JSON.stringify(updatedFavorites)
+);
+
+window.dispatchEvent(
+  new Event("favoritesUpdated")
+);
         window.dispatchEvent(new Event("storage"));
     };
 
